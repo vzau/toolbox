@@ -1,0 +1,29 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: chicagoartcc-org
+  namespace: dev
+spec:
+  secretName: chicagoartcc-org-tls
+  issuerRef:
+    name: letsencrypt
+    kind: ClusterIssuer
+  dnsNames:
+  - chicagoartcc.org
+  - '*.chicagoartcc.org'
+  - '*.dev.chicagoartcc.org'
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: vzau-cloud
+  namespace: dev
+spec:
+  secretName: vzau-cloud-tls
+  issuerRef:
+    name: letsencrypt
+    kind: ClusterIssuer
+  dnsNames:
+  - vzau.cloud
+  - '*.vzau.cloud'
+  - '*.dev.vzau.cloud'
